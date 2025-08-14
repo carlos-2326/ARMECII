@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARMECI — Pomada natural de borrego</title>
+  <meta name="description" content="Pomada 100% natural a base de grasa purificada de borrego. Alivia dolor muscular, descongestiona y humecta profundamente." />
+
+  <style>
+    :root{
+      --green-dark: #234c2f;
+      --green: #4b8a48;
+      --mint: #bfe9c3;
+      --cream: #f3f9e8;
+      --accent: #294e2b;
+      --radius: 12px;
+      --card-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      --max-width: 1100px;
+    }
+    body{
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg,var(--cream),var(--mint));
+      color: var(--green-dark);
+      margin:0;
+    }
+    header{
+      background: var(--green-dark);
+      color:white;
+      padding: 10px 20px;
+      text-align:center;
+      font-weight:700;
+      font-size:20px;
+    }
+    .container{
+      max-width: var(--max-width);
+      margin: 28px auto;
+      padding: 22px;
+      display:grid;
+      grid-template-columns: 520px 1fr;
+      gap: 22px;
+    }
+    .hero{
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--card-shadow);
+    }
+    .brand{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+    .logo{width:72px;height:72px;border-radius:50%;overflow:hidden;}
+    .logo img{width:100%;height:100%;object-fit:cover;}
+    .product-row{display:flex;gap:18px;align-items:center;margin-top:8px}
+    .product-image{width:200px;height:200px;border-radius:12px;overflow:hidden;}
+    .product-image img{width:100%;height:100%;object-fit:cover}
+    .gallery{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+    .gallery img{width:80px;height:80px;border-radius:8px;object-fit:cover;cursor:pointer;box-shadow:var(--card-shadow);transition:transform 0.2s ease;}
+    .gallery img:hover{transform:scale(1.05);}
+    .price{font-size:28px;color:var(--green-dark);font-weight:700}
+    .price small{font-size:14px;font-weight:500;color:var(--green)}
+    .grams{font-size:14px;color:var(--green-dark);margin-top:4px;font-weight:600}
+    .actions{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+    button, .btn{background:var(--green);color:white;border:none;padding:10px 16px;border-radius:10px;cursor:pointer;font-weight:600;}
+    .sidebar{background:rgba(255,255,255,0.9);border-radius:var(--radius);padding:18px;box-shadow:var(--card-shadow);display:flex;flex-direction:column;gap:12px;}
+    form{display:grid;gap:10px}
+    label{font-weight:600;font-size:13px}
+    input, textarea, select{padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.08);font-size:14px}
+    footer{
+      background: var(--green-dark);
+      color:white;
+      padding:20px;
+      text-align:center;
+      font-size:14px;
+    }
+    .cart{
+      background:white;
+      padding:10px;
+      border-radius:8px;
+      box-shadow:var(--card-shadow);
+      font-size:14px;
+      margin-top:20px;
+    }
+    .cart-item{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:5px;
+      align-items:center;
+    }
+    .remove-btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .social-links{
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .social-links a{
+      color:white;
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .social-links img{
+      width:24px;
+      height:24px;
+    }
+    /* Estilos del modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: var(--radius);
+      max-width: 400px;
+      box-shadow: var(--card-shadow);
+      text-align: center;
+    }
+    .close-btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 12px;
+    }
+    @media (max-width:900px){
+      .container{grid-template-columns:1fr;padding:12px}
+      .product-row{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+  <header>ARMECI — Pomada Natural de Borrego</header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="brand">
+        <div class="logo"><img src="logo.jpeg" alt="Logo ARMECI"></div>
+        <div>
+          <div style="font-weight:700;font-size:16px">ARMECI</div>
+          <div style="font-size:12px;color:var(--green);">Del borrego al alma — Pomada natural</div>
+        </div>
+      </div>
+      <h1>Pomada 100% natural</h1>
+      <div class="product-row">
+        <div>
+          <p>Producto elaborado a base de sebo de borrego. Ayuda a aliviar el dolor muscular, descongestionar y ofrecer una hidratación profunda.</p>
+          <div class="price">$105 <small>MXN</small></div>
+          <div class="grams">Contenido neto: 50gr</div>
+          <div class="actions">
+            <button id="addCart">Agregar al carrito</button>
+            <button id="viewDesc">Ver descripción</button>
+          </div>
+          <div class="gallery">
+            <img src="pomada.jpeg" alt="Pomada ARMECI vista 1">
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrito -->
+      <div class="cart" id="cart">
+        <h4>🛒 Carrito (<span id="cartCount">0</span> productos)</h4>
+        <div id="cartItems"></div>
+        <div><strong>Total: $<span id="cartTotal">0</span> MXN</strong></div>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Datos para envío</h3>
+      <form id="shippingForm">
+        <label>Nombre completo</label>
+        <input type="text" required>
+        <label>Correo electrónico</label>
+        <input type="email" required>
+        <label>Teléfono</label>
+        <input type="tel" required>
+        <label>Dirección</label>
+        <input type="text" required>
+        <label>Ciudad</label>
+        <input type="text" required>
+        <label>Código postal</label>
+        <input type="text" required>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="paypal-button-container"></div>
+    </aside>
+  </main>
+
+  <footer>
+    <div style="margin-bottom:12px;">
+      <strong>Ubicación:</strong><br>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.9040055976466!2d-99.23467152547342!3d19.290065646980246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fbb7e2d2b4cd%3A0x74dcf9ef02a51a3e!2sARMECI!5e0!3m2!1ses!2smx!4v1691762049865!5m2!1ses!2smx" 
+        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ARMECI" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">Facebook</a>
+      <a href="https://www.instagram.com/ARMECI_" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">Instagram</a>
+      <a href="https://www.tiktok.com/@ARMECII" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png">TikTok</a>
+      <a href="tel:7752325202"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">775-232-5202</a>
+    </div>
+    <p style="margin-top:12px;">&copy; 2025 ARMECI. Todos los derechos reservados. | Contacto: armecisecret@gmail.com</p>
+  </footer>
+
+  <!-- Modal de descripción -->
+  <div class="modal" id="descModal">
+    <div class="modal-content">
+      <h3>Descripción del producto</h3>
+      <p>Pomada natural elaborada a base de sebo de borrego purificado, ideal para aliviar dolores musculares, reducir inflamaciones, descongestionar vías respiratorias y humectar la piel seca.</p>
+      <button class="close-btn" id="closeModal">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- SDK de PayPal -->
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=MXN"></script>
+
+  <script>
+    let cart = [];
+    const price = 105;
+    const cartItemsEl = document.getElementById('cartItems');
+    const cartTotalEl = document.getElementById('cartTotal');
+    const cartCountEl = document.getElementById('cartCount');
+
+    document.getElementById('addCart').addEventListener('click', () => {
+      cart.push({ name: 'Pomada ARMECI', price });
+      renderCart();
+    });
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    function renderCart() {
+      cartItemsEl.innerHTML = '';
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price;
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <span>${item.name} - $${item.price} MXN</span>
+          <button class="remove-btn" onclick="removeItem(${index})">❌</button>
+        `;
+        cartItemsEl.appendChild(div);
+      });
+      cartTotalEl.textContent = total;
+      cartCountEl.textContent = cart.length;
+    }
+
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        let total = cart.reduce((sum, item) => sum + item.price, 0);
+        if(total <= 0){
+          alert('Agrega productos al carrito primero');
+          return;
+        }
+        return actions.order.create({
+          purchase_units: [{
+            amount: { value: total.toFixed(2), currency_code: 'MXN' }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Gracias por tu compra, ' + details.payer.name.given_name + '!');
+          cart = [];
+          renderCart();
+        });
+      }
+    }).render('#paypal-button-container');
+
+    const modal = document.getElementById('descModal');
+    const openBtn = document.getElementById('viewDesc');
+    const closeBtn = document.getElementById('closeModal');
+
+    openBtn.addEventListener('click', () => {
+      modal.style.display = 'flex';
+    });
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+    window.addEventListener('click', (e) => {
+      if(e.target == modal){
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
